@@ -1,6 +1,6 @@
 export interface MessageType {
-  matchId: string;
-  senderId: string;
-  content: string;
-  timestamp: Date;
+  matchId: string
+  senderId: string
+  content: string
+  timestamp: Date
 }

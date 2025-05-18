@@ -3,6 +3,13 @@
   "module": "index.ts",
   "type": "module",
   "private": true,
+  "scripts": {
+    "start": "bun run dist/index.js",
+    "dev": "nodemon --exec bun run index.ts",
+    "build": "bun build src/index.ts --outdir dist --target node",
+    "test": "bun test",
+    "lint": "bun run lint"
+  },
   "devDependencies": {
     "@types/bun": "latest",
     "@types/express": "^5.0.1",

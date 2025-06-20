@@ -2,8 +2,10 @@
   "name": "petserver",
   "version": "1.0.50",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "bun run --watch src/index.ts"
+    "build": "bun build src/index.ts --outdir=build --target=node",
+    "dev": "bun run --watch src/index.ts",
+    "start": "bun run build && bun run build/index.js",
+    "test": "bun test"
   },
   "dependencies": {
     "elysia": "latest",

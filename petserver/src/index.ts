@@ -1,7 +1,16 @@
-import { Elysia } from "elysia";
+import { Elysia } from 'elysia'
+import http from 'http'
+import initializeSocket from './utils/socker'
 
-const app = new Elysia().get("/", () => "Hello Elysia").listen(3000);
+const port = process.env.PORT || 8080
 
-console.log(
-  `🦊 Elysia is running at ${app.server?.hostname}:${app.server?.port}`
-);
+const app = new Elysia()
+
+const server = http.createServer(app)
+initializeSocket(server)
+
+app.get('/', () => 'Hello World!')
+
+server.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}`)
+})
